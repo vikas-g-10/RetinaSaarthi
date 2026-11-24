@@ -1,0 +1,3 @@
+degradation,strictly_decreasing_images,images,mean_level_1,mean_level_2,mean_level_3,mean_strictly_decreasing
+occlusion,200,200,71.20359774586267,61.85118643371702,51.581718373265524,True
+reduced_contrast,89,200,86.14925054927309,84.24783833239228,83.81606435741713,True

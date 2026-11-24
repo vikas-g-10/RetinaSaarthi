@@ -1,0 +1,5 @@
+id,model,converged,ecc_cc,wrong_pair_cc,tx_px,ty_px,rot_deg,ssim_before,ssim_after,plausible_flag,orig_size_seg,orig_size_grade
+1,translation,True,0.3409,0.328,-0.1,0.26,0.0,0.7489,0.7534,True,4288x2848,4288x2848
+1,euclidean,True,0.3407,0.335,2.26,-2.93,0.82,0.7489,0.7508,True,4288x2848,4288x2848
+9,translation,True,0.5691,0.5984,5.27,12.75,0.0,0.7614,0.7414,True,4288x2848,4288x2848
+9,euclidean,True,0.5795,0.6413,22.31,-20.54,6.58,0.7614,0.7595,True,4288x2848,4288x2848

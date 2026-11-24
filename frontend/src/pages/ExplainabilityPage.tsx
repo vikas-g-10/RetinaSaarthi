@@ -1,0 +1,2 @@
+import { AppShell, Card, EmptyState, PageHero } from '../components/DesignSystem';
+export function ExplainabilityPage() { return <AppShell><PageHero eyebrow="Explainability" title="Explainability is not available yet." description="The backend does not generate Grad-CAM or heatmaps, so no visualization is shown for uploaded images." /><Card><EmptyState title="No generated heatmap" text="Conceptual explainability work remains separate from user screening results. This page intentionally does not display a placeholder heatmap." /></Card></AppShell> }

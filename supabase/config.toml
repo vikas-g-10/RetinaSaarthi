@@ -1,0 +1,4 @@
+project_id = "retinasaarthi"
+
+[functions.admin-users]
+verify_jwt = true

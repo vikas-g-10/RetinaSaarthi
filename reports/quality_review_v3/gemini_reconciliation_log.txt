@@ -1,0 +1,11 @@
+Gemini assessment reconciliation
+=================================
+Source: Downloads/retinasaarthi_all_batches_quality_review.csv
+Original rows: 150
+Duplicate removed: R-3F2F072C (second occurrence from batch 2)
+Retained: first occurrence from batch 1
+Restored: R-FF36B1DA from separately supplied Gemini assessment
+Final rows: 150
+Unique IDs: 150
+Roster match: exact
+Original source files were not modified.

@@ -1,0 +1,17 @@
+degradation,metric,mean_level_1,mean_level_2,mean_level_3,monotonic_increasing_or_decreasing,strictly_decreasing
+occlusion,bbox_aspect_ratio,1.0,1.0,1.0,True,False
+occlusion,circularity,0.8332202609390856,0.8332202609390856,0.8332202609390856,True,False
+occlusion,contrast_p5_p95,111.7,110.84,108.525,True,True
+occlusion,field_coverage_frame_percent,87.80240058898926,87.80240058898926,87.80240058898926,True,False
+occlusion,illumination_mean,78.11673629551589,67.90913896120064,56.00327399502769,True,True
+occlusion,illumination_quadrant_ratio,1.3693461338566084,1.8870073043442073,3.4657451676626305,True,False
+occlusion,illumination_std,31.157812746001664,39.382989650557406,43.76299134703399,True,False
+occlusion,sharpness,54.73082811355591,54.84789796113968,54.251394729614255,False,False
+reduced_contrast,bbox_aspect_ratio,1.0,1.0,1.0,True,False
+reduced_contrast,circularity,0.8332202609390856,0.8332202609390856,0.8332202609390856,True,False
+reduced_contrast,contrast_p5_p95,41.6,31.225,20.835,True,True
+reduced_contrast,field_coverage_frame_percent,87.80240058898926,87.80240058898926,87.80240058898926,True,False
+reduced_contrast,illumination_mean,93.67304139784855,102.10374853444824,110.33427792996385,True,False
+reduced_contrast,illumination_quadrant_ratio,1.2109691677853107,1.1345921835011434,1.0789932387646466,True,True
+reduced_contrast,illumination_std,14.812780797575492,11.11291709882854,7.414574896861544,True,True
+reduced_contrast,sharpness,26.63353014945984,15.682307138442994,7.756133487224579,True,True

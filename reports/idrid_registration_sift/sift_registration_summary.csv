@@ -1,0 +1,2 @@
+image_id,reference_keypoints,moving_keypoints,forward_matches,reverse_matches,mutual_matches,ransac_inliers,inlier_ratio,mean_reprojection_error,median_reprojection_error,scale,rotation_degrees,translation_x,translation_y,plausible_candidate
+1,9960,9908,23,22,10,3,0.3,0.0,0.0,1.0001847448701713,-5.938844163653685,-29.66865018765709,369.6008959466317,False

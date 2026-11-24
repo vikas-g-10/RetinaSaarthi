@@ -1,0 +1,11 @@
+sampling_group,image_count,field,exact_agreement_count,exact_agreement_percent,cohen_kappa
+random,63,image_quality,44,69.84,0.4316
+random,63,field_completeness,52,82.54,0.6557
+random,63,field_size_framing,46,73.02,0.4819
+random,63,blur_at_native_resolution,45,71.43,0.37
+random,63,usability_decision,43,68.25,0.3035
+targeted,38,image_quality,26,68.42,0.523
+targeted,38,field_completeness,23,60.53,0.3214
+targeted,38,field_size_framing,24,63.16,0.3496
+targeted,38,blur_at_native_resolution,24,63.16,0.2712
+targeted,38,usability_decision,23,60.53,0.4112

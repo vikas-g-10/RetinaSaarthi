@@ -1,0 +1,3 @@
+dataset,target,metric,n,spearman_rho,p_value
+APTOS,dr_grade,raw_sharpness,3662,-0.6252476704879893,0.0
+APTOS,pixel_count,raw_sharpness,3662,-0.7193802181530332,0.0

@@ -1,0 +1,73 @@
+# Python environments and cache
+.venv/
+.venv-*/
+.uvlib/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+dist/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+!**/.env.example
+!.env.backend.example
+
+# Local credentials and tools
+.aws/
+.codex/
+.agents/
+.tmp/
+
+# Supabase local state
+supabase/.temp/
+
+# Datasets and downloaded archives
+datasets/
+
+# Generated outputs and model checkpoints
+outputs/*
+!outputs/classification/
+outputs/classification/*
+!outputs/classification/splits/
+outputs/classification/splits/*
+!outputs/classification/splits/*.csv
+
+*.pth
+*.pt
+*.ckpt
+*.onnx
+
+# Generated report images
+reports/**/*.png
+reports/*.png
+
+# Logs
+*.log
+
+# Frontend development and test artifacts
+frontend/.vite/
+frontend/test-results/
+frontend/playwright-report/
+frontend/e2e/screenshots/
+frontend/*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts
+
+# Generated research artifacts
+reports/quality_cache/
+reports/**/sheets/
+reports/**/*.jpg
+reports/**/*.jpeg
+reports/**/*.npy
+reports/**/*.npz
+
+# Backup files
+*.bak
+*.backup

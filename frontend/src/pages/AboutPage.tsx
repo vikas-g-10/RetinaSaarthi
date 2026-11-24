@@ -1,0 +1,2 @@
+import { AppShell, Card, PageHero } from '../components/DesignSystem';
+export function AboutPage() { return <AppShell><PageHero eyebrow="About RetinaSaarthi" title="A research companion for retinal screening." description="Technical quality, real model outputs, and human review in one auditable workflow." /><Card><h2>Screening-support disclaimer</h2><p className="large-copy">RetinaSaarthi is not a clinically validated diagnostic product. Results require clinician review and should never be treated as a diagnosis.</p></Card></AppShell> }

@@ -1,0 +1,13 @@
+group_id,group_size,split,filename,retinopathy_grade,macular_edema_risk,label_disagreement,best_correlation
+1,2,train,IDRiD_021.jpg,1,0,True,0.99999964
+1,2,train,IDRiD_391.jpg,2,0,True,0.99999964
+2,2,train,IDRiD_028.jpg,4,2,True,0.99999791
+2,2,train,IDRiD_327.jpg,3,2,True,0.99999791
+3,2,train,IDRiD_045.jpg,2,0,True,1.00000000
+3,2,train,IDRiD_333.jpg,2,1,True,1.00000000
+4,2,train,IDRiD_073.jpg,2,1,False,1.00000000
+4,2,train,IDRiD_375.jpg,2,1,False,1.00000000
+5,2,train,IDRiD_079.jpg,1,0,False,1.00000000
+5,2,train,IDRiD_279.jpg,1,0,False,1.00000000
+6,2,test,IDRiD_064.jpg,3,0,True,1.00000000
+6,2,train,IDRiD_118.jpg,0,0,True,1.00000000

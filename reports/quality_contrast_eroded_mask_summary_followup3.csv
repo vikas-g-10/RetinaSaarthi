@@ -1,0 +1,4 @@
+level,original_contrast,reestimated_contrast,eroded_contrast,eroded_mean_change_vs_original,eroded_std_change_vs_original
+1,52.005,66.385,54.28,2.275,25.37892480229615
+2,52.005,47.8,33.422249984741214,-18.58275001525879,15.10678622370138
+3,52.005,31.43,21.81,-30.195,17.697257971179955

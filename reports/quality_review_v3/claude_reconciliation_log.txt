@@ -1,0 +1,13 @@
+Claude assessment reconciliation
+==================================
+Source: Downloads/claude_combined_all_batches.csv
+Original rows: 150
+Verified R-ID assessments: 101
+Temporary-ID assessments: 49
+Temporary IDs: 9 POS IDs and 10 each from B2, B3, B4, B5
+All 101 verified IDs are present in the authoritative 150-image roster.
+All 49 temporary IDs remain UNMAPPABLE.
+The previously mentioned mapping file was not found in Downloads, Documents, or Desktop.
+A new claude_temp_id_mapping.csv was created with explicit UNMAPPABLE status.
+No temporary ID was guessed or assigned to an image.
+Original source file was not modified.

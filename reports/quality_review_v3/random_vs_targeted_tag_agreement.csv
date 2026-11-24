@@ -1,0 +1,3 @@
+sampling_group,image_count,exact_tag_set_agreement_count,exact_tag_set_agreement_percent
+random,63,20,31.75
+targeted,38,8,21.05

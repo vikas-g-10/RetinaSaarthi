@@ -1,0 +1,67 @@
+RETINASAARTHI - AI ASSESSMENT AGREEMENT
+=================================================================
+Shared identifiable images: 101
+Gemini: reconciled 150-image assessment
+Claude: 101 mapped assessments
+49 unmappable Claude assessments excluded.
+
+=================================================================
+FIELD: image_quality
+Exact agreement: 69.31% (70/101)
+Cohen kappa (nominal): 0.4911
+Weighted kappa (linear): 0.5965
+Weighted kappa (quadratic): 0.7146
+
+Confusion matrix (rows=Gemini, columns=Claude):
+Claude      poor  borderline  good
+Gemini
+poor          10           7     0
+borderline     4          18     8
+good           0          12    42
+
+=================================================================
+FIELD: field_completeness
+Exact agreement: 74.26% (75/101)
+Cohen kappa (nominal): 0.5146
+
+Confusion matrix (rows=Gemini, columns=Claude):
+Claude             complete  partially clipped  obstructed
+Gemini
+complete                 43                 25           1
+partially clipped         0                 32           0
+obstructed                0                  0           0
+
+=================================================================
+FIELD: field_size_framing
+Exact agreement: 69.31% (70/101)
+Cohen kappa (nominal): 0.4262
+
+Confusion matrix (rows=Gemini, columns=Claude):
+Claude   typical  large
+Gemini
+typical       37     29
+large          2     33
+
+=================================================================
+FIELD: blur_at_native_resolution
+Exact agreement: 68.32% (69/101)
+Cohen kappa (nominal): 0.3281
+
+Confusion matrix (rows=Gemini, columns=Claude):
+Claude     no  yes  uncertain
+Gemini
+no         61    1         21
+yes         2    8          8
+uncertain   0    0          0
+
+=================================================================
+FIELD: usability_decision
+Exact agreement: 65.35% (66/101)
+Cohen kappa (nominal): 0.3786
+
+Confusion matrix (rows=Gemini, columns=Claude):
+Claude         usable  manual review  recapture
+Gemini
+usable             51             24          1
+manual review       0              6          4
+recapture           1              5          9
