@@ -1,0 +1,33 @@
+# e-ophtha EX and MA Grad-CAM protocol — frozen analysis design, cohort gate pending
+
+Recorded before any e-ophtha Grad-CAM inference or scores. This document fixes the proposed analysis and is not authorization to begin while the duplicate-review gate below is unresolved. EX and MA are separate lesion-specific analyses, not an evaluation of all retinal lesions. No clinical validation or patient-level independence is asserted.
+
+## Data and eligibility
+
+Use the extracted images and image–mask inventory described in `../e_ophtha_inventory/README.md`. EX: 47 source-positive images with same-size masks and 35 source-negative images; MA: 148 source-positive images with same-size masks and 233 source-negative images. Counts are before duplicate adjudication. A positive needs its uniquely matched readable same-size nonempty mask. A negative must be explicitly in its source subset's `healthy` folder; unexpected missing files and ambiguous pairings are unknown and excluded with reasons, not negatives. Source-negative means absent for the subset lesion only, not a healthy retina. Do not include duplicate or plausibly duplicate training exposures without adjudication.
+
+The duplicate gate is **not complete**: the broad screen flagged 7,002 image pairs involving 340 unique external images; only 25 examples were visually inspected. Freeze this analysis design now, but do not freeze a final cohort or run inference until flagged pairs receive documented, reproducible image-level review or a validated secondary screening method and its residual sensitivity are specified and applied before seeing Grad-CAM. Retain unresolved candidate cases as ineligible pending review. Do not exclude any case solely on a perceptual-hash score. Retain the record of all candidates, decisions, and exclusions. If materially changing this protocol, version it and record the change before inference.
+
+The source-specific subsets share 29 byte- and RGB-identical images. Each may contribute once per applicable lesion-specific analysis; never sum the cohort counts as independent individuals or pool these as independent observations. Group known visit/shared-image links for descriptive reporting; distinct visit folders are not verified distinct patients. No patient-level confidence interval or independence claim is justified.
+
+## Mask interpretation and sensitivity
+
+EX: positive mask = pixel value > 0. MA primary: pixel value > 0, interpreting all nonzero values as annotation **provisionally**, not as confirmed classes. The included source documentation calls masks binary, and representative overlays show both 200 and 255 in small marked locations; it does not define the value meanings. Keep masks in native coordinates; do not interpolate masks. Primary denominator is recorded annotated pixels, not all lesions.
+
+MA sensitivity A: use pixels equal to 255 only; if a source-positive mask becomes empty, exclude that image from positive overlap metrics and report its ID and count, never relabel it as source-negative. Five original masks contain only 200-valued foreground. MA sensitivity B: repeat primary after excluding the four 239/247 pixels only (not the image). Report numerical differences and sample counts, without selecting the most favorable interpretation. If the provider clarifies semantics, record and version the protocol before scoring.
+
+## Model, spatial mapping and threshold
+
+Use the existing checkpoint `outputs/classification/combined_aptos_idrid_baseline/best_model.pth` (SHA-256 `11917bd5cc3669ddecfd9d93fd03b86903520689b809cf6c0381cfabe7dfb64c`); confirm the hash and record software versions and device. Resize the input to 224×224, tensor and ImageNet normalize exactly as the existing evaluation. Use EfficientNet-B0 `features[-1]` and Grad-CAM for the model's predicted class, ReLU and per-image min–max normalization; a constant map becomes zero. Upsample continuous maps bilinearly to the original dimensions, as in the existing evaluator, then threshold at >= 0.5. Prespecified threshold sensitivity: >= 0.25 and >= 0.75; do not select a threshold based on these data.
+
+## Metrics and reporting
+
+For each positive image, with binary activation A and recorded lesion pixels L, report intersection I, IoU I/(|A|+|L|−I), Dice 2I/(|A|+|L|), coverage I/|L|, predicted grade, mask size and activation size. With a nonempty L and empty A all three metrics are zero. Summarize by subset using unweighted per-image mean and median; report counts and exclusions, and do not pool EX and MA or claim these pixel metrics measure per-lesion detection. MA marks can be points or small regions, so coverage measures coverage of marks and boundary overlap is resolution-sensitive.
+
+For explicitly source-negative cases, do not invent a supplied empty mask or compute positive IoU, Dice or coverage. Report per-image and mean/median thresholded activation area as a fraction of the entire original image rectangle (including black border); report fraction of cases with any activation. Zero activation has fraction zero. This fixed denominator is reproducible but is not retinal-area-normalized, and framing differences affect it. Report predicted grades separately; a predicted-grade-0 map describes that class, not necessarily lesion localization. No threshold tuning, causal interpretation, clinical accuracy or patient-independent claim is permitted.
+
+The current checkpoint does not contain its exact training manifest, and the current manifest is only a known reference set. The fixed-grid visual screen can miss rescaled, shifted, cropped, mirrored or different-visit images and does not establish patient identity. Dataset class labels are incomplete for other lesion categories, grades are not verified, annotation meaning and completeness are uncertain, and per-image map normalization plus coarse Grad-CAM resolution constrain interpretation. No Grad-CAM score may be produced before the cohort gate above is closed.
+
+## Duplicate-gate addendum — second-stage review, before inference
+
+The 7,002 first-stage pairs were screened with retinal-interior ORB features and partial-affine consistency, as documented in `second_stage_findings.md`. A small control set passed its tested transformations, and 22 pairs were prioritized and inspected at overview scale; all 22 remain unresolved. The 6,980 lower-scoring pairs have not been cleared: the limited controls do not establish real-world or end-to-end recall. The cohort gate remains open, no exclusions are assigned, and no e-ophtha Grad-CAM inference or scores may be run under this protocol until adequate review or independently validated screening evidence resolves the gate. This addendum does not change the frozen thresholds, mask rules or planned metrics above.
