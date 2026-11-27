@@ -20,7 +20,9 @@ Prior staged pass completed before this run: backend Python 3.13 environment, pa
 
 ## Objective 3 — exploratory quantitative explainability (2026-11-27)
 
-[partial] Objective 3 remains exploratory: checkpoint training inputs and patient- or eye-level independence are not verified.
+[done] Objective 3 prototype implementation and three-image exploratory study are complete; see the [final study report](reports/objective3_final_report.md).
+
+[pending] Independent validation remains outstanding: checkpoint training inputs and patient- or eye-level independence are not verified. The findings are not clinical validation.
 
 [done] Recorded a fixed protocol and calculated predicted-class Grad-CAM overlap for three mapped IDRiD grade-2 candidates; see [protocol](reports/objective3_protocol.md) and [results and verification](reports/objective3_results.md). Original datasets and checkpoint were not modified. The 09 candidate has an incomplete mask set and is reported separately; the two candidates with four mask files have mean IoU 0.0447, Dice 0.0854, and recorded-lesion coverage 0.2741 at the fixed 0.5 threshold.
 
